@@ -8,8 +8,13 @@ const options = getopt({
   raw: { description: 'emit raw format instead of JSON' },
   model: { description: 'model name', args: 1, required: false, default: 'default' },
   once: { description: 'emit one reading and exit' },
-  time: { description: 'add timestamp' }
+  time: { description: 'add timestamp' },
+  // list: { description: 'list available models' }
 })
+
+if (options.list) {
+  // TODO
+}
 
 const heizung = new HargassnerTelnet({ IP: options.ip, model: options.model })
 
