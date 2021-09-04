@@ -1,7 +1,7 @@
 const net = require('net')
 
 class HargassnerTelnet {
-  constructor (options = {}) {
+  constructor(options = {}) {
     this.data = {}
     this.raw = []
     this._on = []
@@ -10,10 +10,10 @@ class HargassnerTelnet {
     this._port = options.PORT || 23
 
     const model = options.model || 'default'
-    this.model = require('./model/' + model + '.json')
+    this.model = require('../lib/model/' + model + '.json')
   }
 
-  connect (options) {
+  connect(options) {
     var me = this
     me._client = new net.Socket()
 
@@ -31,30 +31,30 @@ class HargassnerTelnet {
         me.raw = str.toString().split(' ')
         me.data = me.parse(me.raw)
         me._on.forEach((elem) => {
-          if (typeof (elem) === 'function') elem(me.data)
+          if (typeof elem === 'function') elem(me.data)
         })
       } // else console.log(str.toString());
     })
   }
 
-  on (name, callback) {
+  on(name, callback) {
     if (name === 'data') {
       this._on.push(callback)
     }
   }
 
-  disconnect () {
+  disconnect() {
     this._client.destroy()
   }
 
-  parse (arr) {
+  parse(arr) {
     return parseModel({}, this.model, arr)
   }
 }
 
-const isObject = o => o === Object(o) && !Array.isArray(o)
+const isObject = (o) => o === Object(o) && !Array.isArray(o)
 
-function parseModel (target, model, raw) {
+function parseModel(target, model, raw) {
   for (const key in model) {
     if (isObject(model[key])) {
       if (!(key in target)) {
@@ -69,7 +69,7 @@ function parseModel (target, model, raw) {
       } else if (typeof spec === 'number') {
         value = raw[spec]
       } else if (Array.isArray(spec)) {
-        value = ((parseInt(raw[spec[0]], 16) & Number(spec[1])) > 0)
+        value = (parseInt(raw[spec[0]], 16) & Number(spec[1])) > 0
       } // else: "Unexpected configuration!"
       target[key] = value
     }

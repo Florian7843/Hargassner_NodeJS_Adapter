@@ -1,1 +1,3 @@
 dist
+# Added until I update the files to ts.
+**/*.js
