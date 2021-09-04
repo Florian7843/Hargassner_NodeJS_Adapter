@@ -4,7 +4,6 @@
     "description": "Adapter zur Kommunikation mit einem Heizkessel des Herstellers 'Hargassner' und dessen Steuerung 'Touch Control' mittels der nicht (offiziell) dokumentierten und freigegebenen Telnet Schnittstelle direkt am Lan Anschluss des Touch-Panel der Steuerung ",
     "main": "index.js",
     "scripts": {
-        "test": "jest",
         "lint": "eslint --fix {lib,bin}/*.js"
     },
     "bin": {
@@ -25,7 +24,6 @@
     },
     "homepage": "https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter#readme",
     "pre-commit": [
-        "test",
         "lint"
     ],
     "dependencies": {
@@ -39,7 +37,6 @@
         "eslint-plugin-prettier": "^4.0.0",
         "prettier": "^2.3.2",
         "typescript": "^4.4.2",
-        "jest": "^26.4.2",
         "pre-commit": "^1.2.2"
     }
 }
