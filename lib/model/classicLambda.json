@@ -1,0 +1,25 @@
+{
+  "modelName": "classicLambda",
+  "Kessel": {
+    "SauerstoffgehaltIst": 1,
+    "SauerstoffgehaltSoll": 2,
+    "KesselTempIst": 3,
+    "KesselTempSoll": 4,
+    "RauchgasTemp": 5,
+    "Leistung": 6,
+    "RuecklaufTempIst": "23? oder HK1?",
+    "RuecklaufTempSoll": "24? oder HK1?",
+    "HoechsteAnforderung": "110?"
+  },
+  "Puffer": {
+    "TempOben": 17,
+    "TempMitteOben": 18,
+    "TempMitte": 19,
+    "TempMitteUnten": 20,
+    "TempUnten": 21
+  },
+  "Heizkreis1": {
+    "VorlaufIst": 56,
+    "VorlaufSoll": 57
+  }
+}
