@@ -45,6 +45,7 @@ const argv: arguments = yargs
     alias: 'q',
     type: 'boolean'
   })
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   .help().argv as any
 
 const client = new HargassnerTelnet(argv.ip, argv.port, {
