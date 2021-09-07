@@ -9,6 +9,10 @@
     "hgjson": "tsc && dist/bin/hgjson.js",
     "semantic-release": "semantic-release"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "tag": "latest"
+  },
   "bin": {
     "hgjson": "./dist/hgjson.js"
   },
