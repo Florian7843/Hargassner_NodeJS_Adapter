@@ -1,18 +1,20 @@
 {
-  "name": "hargassner_telnet",
+  "name": "@florian7843/hargassner_nodejs_adapter",
   "version": "0.0.0-development",
   "description": "Adapter zur Kommunikation mit einem Heizkessel des Herstellers 'Hargassner' und dessen Steuerung 'Touch Control' mittels der nicht (offiziell) dokumentierten und freigegebenen Telnet Schnittstelle direkt am Lan Anschluss des Touch-Panel der Steuerung ",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "eslint --fix */*.{js,ts}",
     "build": "tsc",
     "hgjson": "tsc && dist/bin/hgjson.js",
     "semantic-release": "semantic-release"
   },
+  "prepublish": "tsc",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
     "tag": "latest"
   },
+  "types": "dist/index.d.ts",
   "bin": {
     "hgjson": "./dist/hgjson.js"
   },
