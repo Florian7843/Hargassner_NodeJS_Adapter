@@ -94,11 +94,17 @@ export class HargassnerTelnet {
   }
 
   parse(data: string[]): dynamicData {
-    // TODO: Handle model not found
-    const modelString = fs.readFileSync(
-      `lib/model/${this.options.model}.json`,
-      'utf-8'
-    )
+    let modelString = ''
+    try {
+      modelString = fs.readFileSync(
+        `${__dirname}/../lib/model/${this.options.model}.json`,
+        'utf-8'
+      )
+    } catch (e) {
+      console.log(`Model ${this.options.model} could not be found. Exiting...`)
+      process.exit(1)
+    }
+
     const model = JSON.parse(modelString)
     return parseModel(model, data)
   }
