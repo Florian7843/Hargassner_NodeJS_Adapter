@@ -66,7 +66,7 @@ export class HargassnerTelnet {
         data = this.parse(dataSplit)
       } else {
         // Raw set just return the string
-        data = buffer.toString()
+        data = buffer.toString().replace(/(.*) \r\n/g, '$1')
       }
 
       this.callbacks.data?.forEach((callback) => callback(data))
