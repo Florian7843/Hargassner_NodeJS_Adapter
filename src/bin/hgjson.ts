@@ -55,7 +55,7 @@ const client = new HargassnerTelnet(argv.ip, argv.port, {
 })
 
 client.on('data', (data) => {
-  console.log(argv.formatted ? data : JSON.stringify(data))
+  console.log(argv.formatted || argv.raw ? data : JSON.stringify(data))
   // Handle --once
   if (argv.once) process.exit(0)
 })
