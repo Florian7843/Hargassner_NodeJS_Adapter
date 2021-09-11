@@ -9,6 +9,7 @@ type arguments = {
   once: true | undefined
   formatted: true | undefined
   raw: true | undefined
+  array: true | 'numbered' | 'raw' | 'numbered-raw' | undefined
   quiet: true | undefined
 }
 
@@ -41,6 +42,10 @@ const argv: arguments = yargs
     type: 'boolean',
     conflicts: 'formatted'
   })
+  .option('array', {
+    alias: 'a',
+    choices: [true, 'numbered', 'raw', 'numbered-raw']
+  })
   .option('quiet', {
     alias: 'q',
     type: 'boolean'
@@ -51,11 +56,34 @@ const argv: arguments = yargs
 const client = new HargassnerTelnet(argv.ip, argv.port, {
   model: argv.model,
   quiet: argv.quiet,
-  raw: argv.raw
+  raw: argv.raw || argv.array !== undefined
 })
 
 client.on('data', (data) => {
-  console.log(argv.formatted || argv.raw ? data : JSON.stringify(data))
+  let string: unknown
+
+  // if --array option is specified
+  if (argv.array) {
+    // create array
+    let array: Array<string> = data.split(' ')
+
+    // if array is not supposed to be raw remove the static pm entry
+    if (argv.array !== 'numbered-raw' && argv.array !== 'raw') array.shift()
+
+    // if array is supposed to be numbered add add index to every entry and output as object
+    if (argv.array === 'numbered' || argv.array === 'numbered-raw') {
+      array = Object.assign({}, array)
+    }
+
+    string = argv.formatted ? array : JSON.stringify(array)
+  } else {
+    // --array option is not specified
+
+    // if formatted or raw is set output data as is, otherwise stringify
+    string = argv.formatted || argv.raw ? data : JSON.stringify(data)
+  }
+
+  console.log(string)
   // Handle --once
   if (argv.once) process.exit(0)
 })
