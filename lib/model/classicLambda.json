@@ -1,25 +1,412 @@
 {
-  "modelName": "classicLambda",
+  "Allgemein": {
+    "Kesselzustand": 0
+  },
   "Kessel": {
-    "SauerstoffgehaltIst": 1,
-    "SauerstoffgehaltSoll": 2,
-    "KesselTempIst": 3,
-    "KesselTempSoll": 4,
-    "RauchgasTemp": 5,
-    "Leistung": 6,
-    "RuecklaufTempIst": "23? oder HK1?",
-    "RuecklaufTempSoll": "24? oder HK1?",
-    "HoechsteAnforderung": "110?"
+    "Sauerstoffgehalt": {
+      "Ist": 1,
+      "Soll": 2
+    },
+    "Temp": {
+      "Ist": 3,
+      "Soll": 4,
+      "Rauchgas": 5,
+      "Ruecklauf": {
+        "Ist": 23,
+        "Soll": 24
+      }
+    },
+    "Leistung": 8,
+    "BrennstoffScale": 28,
+    "HoechsteAnforderung": 107
   },
   "Puffer": {
-    "TempOben": 17,
-    "TempMitteOben": 18,
-    "TempMitte": 19,
-    "TempMitteUnten": 20,
-    "TempUnten": 21
+    "Temp": {
+      "Oben": 17,
+      "MittelOben": 18,
+      "Mitte": 19,
+      "MitteUnten": 20,
+      "Unten": 21,
+      "Soll": {
+        "Oben": 143,
+        "Unten": 144
+      }
+    },
+    "?Zustand": 40,
+    "?Soll": 41,
+    "Fuellgrad": 42
   },
-  "Heizkreis1": {
-    "VorlaufIst": 56,
-    "VorlaufSoll": 57
+  "Boiler": {
+    "A": {
+      "Temp": {
+        "Ist": 92,
+        "Soll": 93
+      },
+      "Pumpe": [149, "0x0001"],
+      "ZirkulationsPumpe": [149, "0x0004"]
+    },
+    "B": {
+      "Temp": {
+        "Ist": 131,
+        "Soll": 132
+      },
+      "Pumpe": [151, "0x0003"],
+      "ZirkulationsPumpe": [149, "0x0004"]
+    },
+    "1": {
+      "Temp": {
+        "Ist": 95,
+        "Soll": 96
+      },
+      "Zustand": 145,
+      "Pumpe": [149, "0x0002"],
+      "ZirkulationsPumpe": [149, "0x0005"]
+    },
+    "2": {
+      "Temp": {
+        "Ist": 98,
+        "Soll": 99
+      },
+      "Zustand": 146,
+      "Pumpe": [149, "0x0003"],
+      "ZirkulationsPumpe": [149, "0x0006"]
+    },
+    "3": {
+      "Temp": {
+        "Ist": 101,
+        "Soll": 102
+      },
+      "Pumpe": [149, "0x0004"],
+      "ZirkulationsPumpe": [149, "0x0007"]
+    }
+  },
+  "Vorlaeufe": {
+    "A": {
+      "Temp": {
+        "Ist": 50,
+        "Soll": 51,
+        "Raum": {
+          "Ist": 52,
+          "Soll": 53
+        }
+      },
+      "Zustand": 54,
+      "?FRZustand": 55,
+      "Pumpe": [147, "0x0004"],
+      "Mischer": {
+        "Auf": [147, "0x0005"],
+        "Zu": [147, "0x0006"]
+      }
+    },
+    "B": {
+      "Temp": {
+        "Ist": 134,
+        "Soll": 135,
+        "Raum": {
+          "Ist": 139,
+          "Soll": 137,
+          "?TRB": 136
+        }
+      },
+      "Zustand": 138,
+      "?FRZustand": 130,
+      "Pumpe": [151, "0x0000"],
+      "Mischer": {
+        "Auf": [151, "0x0002"],
+        "Zu": [151, "0x0003"]
+      }
+    }
+  },
+  "Heizkreise": {
+    "1": {
+      "Temp": {
+        "Ist": 56,
+        "Soll": 57,
+        "Raum": {
+          "Ist": 58,
+          "Soll": 59
+        }
+      },
+      "Zustand": 60,
+      "?FRZustand": 61,
+      "Anforderung": 109,
+      "Pumpe": [147, "0x0007"],
+      "Mischer": {
+        "Auf": [147, "0x0008"],
+        "Zu": [147, "0x0009"]
+      }
+    },
+    "2": {
+      "Temp": {
+        "Ist": 62,
+        "Soll": 63,
+        "Raum": {
+          "Ist": 64,
+          "Soll": 65
+        }
+      },
+      "Zustand": 66,
+      "?FRZustand": 67,
+      "Anforderung": 110,
+      "Pumpe": [147, "0x000A"],
+      "Mischer": {
+        "Auf": [147, "0x000B"],
+        "Zu": [147, "0x000C"]
+      }
+    },
+    "3": {
+      "Temp": {
+        "Ist": 68,
+        "Soll": 69,
+        "Raum": {
+          "Ist": 70,
+          "Soll": 71
+        }
+      },
+      "Zustand": 72,
+      "?FRZustand": 73,
+      "Anforderung": 111,
+      "Pumpe": [150, "0x0000"],
+      "Mischer":{
+        "Auf": [147, "0x0001"],
+        "Zu": [147, "0x0002"]
+      }
+    },
+    "4": {
+      "Temp": {
+        "Ist": 74,
+        "Soll": 75,
+        "Raum": {
+          "Ist": 76,
+          "Soll": 77
+        }
+      },
+      "Zustand": 78,
+      "?FRZustand": 79,
+      "Anforderung": 112,
+      "Pumpe": [150, "0x0003"],
+      "Mischer":{
+        "Auf": [147, "0x0004"],
+        "Zu": [147, "0x0005"]
+      }
+    },
+    "5": {
+      "Temp": {
+        "Ist": 80,
+        "Soll": 81,
+        "Raum": {
+          "Ist": 82,
+          "Soll": 83
+        }
+      },
+      "Zustand": 84,
+      "?FRZustand": 85,
+      "Anforderung": 113,
+      "Pumpe": [150, "0x0006"],
+      "Mischer":{
+        "Auf": [147, "0x0007"],
+        "Zu": [147, "0x0008"]
+      }
+    },
+    "6": {
+      "Temp": {
+        "Ist": 86,
+        "Soll": 87,
+        "Raum": {
+          "Ist": 88,
+          "Soll": 89
+        }
+      },
+      "Zustand": 90,
+      "?FRZustand": 91,
+      "Anforderung": 114,
+      "Pumpe": [150, "0x0009"],
+      "Mischer":{
+        "Auf": [147, "0x000A"],
+        "Zu": [147, "0x000B"]
+      }
+    },
+    "?ext": {
+      "1": {
+        "Soll": 104,
+        "Pumpe": [149, "0x0008"],
+        "Anforderung": [149, "0x000B"]
+      },
+      "2": {
+        "Soll": 105,
+        "Pumpe": [149, "0x0009"],
+        "Anforderung": [149, "0x000C"]
+      },
+      "3": {
+        "Soll": 106,
+        "Pumpe": [149, "0x000A"],
+        "Anforderung": [149, "0x000D"]
+      }
+    }
+  },
+  "Lager": {
+    "Lagerstand": 46,
+    "Verbrauchszähler": 47
+  },
+  "Ascheschnecke": {
+    "Run": [148, "0x0003"],
+    "Richtung": [148, "0x0004"]
+  },
+  "Einschub": {
+    "EinschubIst": 29,
+    "EinschubSoll": 9,
+    "EinschubStrom": 10,
+    "Run": [148, "0x0005"],
+    "Richtung": [148, "0x0006"]
+  },
+  "Strom": {
+    "RaumaustragungStrom": 11,
+    "AscheaustragungStrom": 12,
+    "SchieberostStrom": 13,
+    "PutzeinheitStrom": 14,
+    "StromLeistung": 36,
+    "StromSpannung": 37,
+    "StromStärke": 38,
+    "?StromSpannungSens": 39,
+    "SpannungNetzteil": 130
+  },
+  "Aussentemperatur":{
+    "Ist": 15,
+    "Gemittel": 16
+  },
+  "?": {
+    "?SZ_Ist": 6,
+    "?SZ_Soll": 7,
+    "?TempFW": 22,
+    "TempPlatine": 25,
+    "TempBrennraum": 26,
+    "?ReglerK": 27,
+    "?BLDC_ES_Ist": 30,
+    "?BLDC_ES_Soll": 31,
+    "LaufzeitEinschubSeitFuellen": 32,
+    "?LaufzeitEinschubSeitEntaschung": 33,
+    "AnzahlEntaschungen": 34,
+    "AnzahlSchieberostBewegung": 35,
+    "?maxLeistungP3F_HT": 43,
+    "Spreizung": 44,
+    "?AIN17": 45,
+    "?UsePos": 48,
+    "?StörungsNr": 49,
+    "?AnfHKR0": 108,
+    "?AnfHKR7": 115,
+    "?AnfHKR8": 116,
+    "?AnfHKR9": 117,
+    "?AnfHKR10": 118,
+    "?AnfHKR11": 119,
+    "?AnfHKR12": 120,
+    "?AnfHKR13": 121,
+    "?AnfHKR14": 122,
+    "?AnfHKR15": 123,
+    "?TSpuelung": 124,
+    "?ProgrammHKM1": 125,
+    "?ProgrammHKM2": 126,
+    "?TVG": 127,
+    "?Programm": 141,
+    "?Anf_EHK_Spg": 142,
+    "?STB": [147, "0x0001"],
+    "?Fuellstand": [147, "0x0002"],
+    "PutzeinrichtungEndlage": [147, "0x0003"],
+    "?Stoerung": [147, "0x000D"],
+    "?L_Heiz": [148, "0x0001"],
+    "?Z_Heiz": [148, "0x0002"],
+    "?Z_Geb": [148, "0x0003"],
+    "?AS": {
+      "?Saug": [148, "0x0007"],
+      "?RA": {
+        "Run": [148, "0x0008"],
+        "Richtung": [148, "0x0009"]
+      }
+    },
+    "?Reinigung": {
+      "Freigeschalten": [148, "0x000A"],
+      "Aktiv": [148, "0x000B"]
+    },
+    "?Ruecklauf": {
+      "Mischer": {
+        "Auf": [148, "0x000C"],
+        "Zu": [148, "0x000D"]
+      },
+      "Pumpe": [148, "0x000E"]
+    },
+    "?EntaschungGesperrt": [150, "0x000E"],
+    "?ATW": [150, "0x000F"],
+    "?Kask": {
+      "KWK_OK": [151, "0x0005"],
+      "KWK_Out": [154, "0x0009"],
+      "FW_OK": [151, "0x0006"],
+      "FW_Out": [154, "0x0004"],
+      "1": {
+        "Run": [151, "0x0008"],
+        "OK": [152, "0x0010"]
+      },
+      "2": {
+        "Run": [151, "0x0009"],
+        "OK": [152, "0x0011"]
+      },
+      "3": {
+        "Run": [151, "0x000A"],
+        "OK": [152, "0x0012"]
+      },
+      "4": {
+        "Run": [151, "0x000B"],
+        "OK": [152, "0x0013"]
+      }
+    },
+    "FremdwaermeFreigabe": [151, "0x000C"],
+    "?sAS_Anf_Fuell": [151, "0x000D"],
+    "?HKV": [151, "0x000E"],
+    "?FLP": [151, "0x000F"],
+    "?Netztrafo": [152, "0x0005"],
+    "?Netzrelais": [152, "0x0006"],
+    "?Lagerraum": [152, "0x0007"],
+    "?Aschebox": [152, "0x0008"],
+    "?gFl": {
+      "?Pumpe": [153, "0x0000"],
+      "?Mischer": {
+        "Auf": [153, "0x0001"],
+        "Zu": [153, "0x0002"]
+      }
+    },
+    "?SpuelungAktiv": [153, "0x0004"],
+    "?DReg": {
+      "1": {
+        "?P2": [154, "0x0000"],
+        "?P3": [154, "0x0001"],
+        "?Mischer": {
+          "Auf": [154, "0x0002"],
+          "Zu": [154, "0x0003"]
+        }
+      },
+      "2": {
+        "?P2": [154, "0x0005"],
+        "?P3": [154, "0x0006"],
+        "?Mischer": {
+          "Auf": [154, "0x0007"],
+          "Zu": [154, "0x0008"]
+        }
+      },
+      "3": {
+        "?P2": [154, "0x0014"],
+        "?P3": [154, "0x0015"],
+        "?Mischer": {
+          "Auf": [154, "0x0016"],
+          "Zu": [154, "0x0017"]
+        }
+      }
+    }
+  },
+  "_dummy": {
+    "94": 94,
+    "97": 97,
+    "100": 100,
+    "103": 103,
+    "128": 128,
+    "129": 129,
+    "133": 133
   }
 }
