@@ -90,6 +90,7 @@ client.on('data', (data) => {
   } else {
     // --array option is not specified
 
+    // TODO: output data formatted via JSON.strigify(data, null, 2) as output shows [object]
     // if formatted or raw is set output data as is, otherwise stringify
     string = argv.formatted || argv.raw ? data : JSON.stringify(data)
   }
