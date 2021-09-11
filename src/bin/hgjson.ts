@@ -18,37 +18,48 @@ const argv: arguments = yargs
   .scriptName('hgjson')
   .option('ip', {
     type: 'string',
-    demandOption: true
+    demandOption: true,
+    description: 'The IP-Address of the Hargassner oven.'
   })
   .option('port', {
     alias: 'p',
     default: 23,
-    type: 'number'
+    type: 'number',
+    description: 'The endpoint port of the connection.'
   })
   .option('model', {
     alias: 'm',
     default: 'default',
     choices: ['default', 'nano2', 'classicLambda'],
-    type: 'string'
+    type: 'string',
+    description: 'The model of the Hargassner oven.'
   })
-  .option('once', { alias: 'o', type: 'boolean' })
+  .option('once', {
+    alias: 'o',
+    type: 'boolean',
+    description: 'Only read parameters once.'
+  })
   .option('formatted', {
     alias: 'f',
     type: 'boolean',
-    conflicts: 'raw'
+    conflicts: 'raw',
+    description: 'Output data formatted'
   })
   .option('raw', {
     alias: 'r',
     type: 'boolean',
-    conflicts: 'formatted'
+    conflicts: 'formatted',
+    description: 'Output data like Hargassner sends it.'
   })
   .option('array', {
     alias: 'a',
-    choices: [true, 'numbered', 'raw', 'numbered-raw']
+    choices: [true, 'numbered', 'raw', 'numbered-raw'],
+    description: 'Output data as array/numbed-object.'
   })
   .option('quiet', {
     alias: 'q',
-    type: 'boolean'
+    type: 'boolean',
+    description: "Do not display 'Connected to x.x.x.x:x'"
   })
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   .help().argv as any
