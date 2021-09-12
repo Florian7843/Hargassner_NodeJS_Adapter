@@ -1,6 +1,6 @@
 {
   "Allgemein": {
-    "Kesselzustand": 0
+    "?Kesselzustand": 0
   },
   "Kessel": {
     "Sauerstoffgehalt": {
@@ -17,8 +17,8 @@
       }
     },
     "Leistung": 8,
-    "BrennstoffScale": 28,
-    "HoechsteAnforderung": 107
+    "?BrennstoffScale": 28,
+    "?HoechsteAnforderung": 107
   },
   "Puffer": {
     "Temp": {
@@ -36,8 +36,9 @@
     "?Soll": 41,
     "Fuellgrad": 42
   },
-  "Boiler": {
-    "A": {
+  "Boiler": [
+    {
+      "id": "A",
       "Temp": {
         "Ist": 92,
         "Soll": 93
@@ -45,7 +46,8 @@
       "Pumpe": [149, "0x0001"],
       "ZirkulationsPumpe": [149, "0x0004"]
     },
-    "B": {
+    {
+      "id": "B",
       "Temp": {
         "Ist": 131,
         "Soll": 132
@@ -53,7 +55,8 @@
       "Pumpe": [151, "0x0003"],
       "ZirkulationsPumpe": [149, "0x0004"]
     },
-    "1": {
+    {
+      "id": "1",
       "Temp": {
         "Ist": 95,
         "Soll": 96
@@ -62,7 +65,8 @@
       "Pumpe": [149, "0x0002"],
       "ZirkulationsPumpe": [149, "0x0005"]
     },
-    "2": {
+    {
+      "id": "2",
       "Temp": {
         "Ist": 98,
         "Soll": 99
@@ -71,7 +75,8 @@
       "Pumpe": [149, "0x0003"],
       "ZirkulationsPumpe": [149, "0x0006"]
     },
-    "3": {
+    {
+      "id": "3",
       "Temp": {
         "Ist": 101,
         "Soll": 102
@@ -79,9 +84,10 @@
       "Pumpe": [149, "0x0004"],
       "ZirkulationsPumpe": [149, "0x0007"]
     }
-  },
-  "Vorlaeufe": {
-    "A": {
+  ],
+  "Vorlaeufe": [
+    {
+      "id": "A",
       "Temp": {
         "Ist": 50,
         "Soll": 51,
@@ -98,7 +104,8 @@
         "Zu": [147, "0x0006"]
       }
     },
-    "B": {
+    {
+      "id": "B",
       "Temp": {
         "Ist": 134,
         "Soll": 135,
@@ -116,9 +123,10 @@
         "Zu": [151, "0x0003"]
       }
     }
-  },
-  "Heizkreise": {
-    "1": {
+  ],
+  "Heizkreise": [
+    {
+      "id": "1",
       "Temp": {
         "Ist": 56,
         "Soll": 57,
@@ -136,7 +144,8 @@
         "Zu": [147, "0x0009"]
       }
     },
-    "2": {
+    {
+      "id": "2",
       "Temp": {
         "Ist": 62,
         "Soll": 63,
@@ -154,7 +163,8 @@
         "Zu": [147, "0x000C"]
       }
     },
-    "3": {
+    {
+      "id": "3",
       "Temp": {
         "Ist": 68,
         "Soll": 69,
@@ -172,7 +182,8 @@
         "Zu": [147, "0x0002"]
       }
     },
-    "4": {
+    {
+      "id": "4",
       "Temp": {
         "Ist": 74,
         "Soll": 75,
@@ -190,7 +201,8 @@
         "Zu": [147, "0x0005"]
       }
     },
-    "5": {
+    {
+      "id": "5",
       "Temp": {
         "Ist": 80,
         "Soll": 81,
@@ -208,7 +220,8 @@
         "Zu": [147, "0x0008"]
       }
     },
-    "6": {
+    {
+      "id": "6",
       "Temp": {
         "Ist": 86,
         "Soll": 87,
@@ -226,48 +239,54 @@
         "Zu": [147, "0x000B"]
       }
     },
-    "?ext": {
-      "1": {
-        "Soll": 104,
-        "Pumpe": [149, "0x0008"],
-        "Anforderung": [149, "0x000B"]
-      },
-      "2": {
-        "Soll": 105,
-        "Pumpe": [149, "0x0009"],
-        "Anforderung": [149, "0x000C"]
-      },
-      "3": {
-        "Soll": 106,
-        "Pumpe": [149, "0x000A"],
-        "Anforderung": [149, "0x000D"]
-      }
+    {
+      "id": "?ext",
+      "exts": [
+        {
+          "id": "1",
+          "Soll": 104,
+          "Pumpe": [149, "0x0008"],
+          "Anforderung": [149, "0x000B"]
+        },
+        {
+          "id": "2",
+          "Soll": 105,
+          "Pumpe": [149, "0x0009"],
+          "Anforderung": [149, "0x000C"]
+        },
+        {
+          "id": "3",
+          "Soll": 106,
+          "Pumpe": [149, "0x000A"],
+          "Anforderung": [149, "0x000D"]
+        } 
+      ]
     }
-  },
+  ],
   "Lager": {
     "Lagerstand": 46,
-    "Verbrauchszähler": 47
+    "Verbrauchszaehler": 47
   },
   "Ascheschnecke": {
     "Run": [148, "0x0003"],
     "Richtung": [148, "0x0004"]
   },
   "Einschub": {
-    "EinschubIst": 29,
-    "EinschubSoll": 9,
-    "EinschubStrom": 10,
+    "Ist": 29,
+    "Soll": 9,
+    "Strom": 10,
     "Run": [148, "0x0005"],
     "Richtung": [148, "0x0006"]
   },
   "Strom": {
-    "RaumaustragungStrom": 11,
-    "AscheaustragungStrom": 12,
-    "SchieberostStrom": 13,
-    "PutzeinheitStrom": 14,
-    "StromLeistung": 36,
-    "StromSpannung": 37,
-    "StromStärke": 38,
-    "?StromSpannungSens": 39,
+    "Raumaustragung": 11,
+    "Ascheaustragung": 12,
+    "Schieberost": 13,
+    "Putzeinheit": 14,
+    "Leistung": 36,
+    "Spannung": 37,
+    "Staerke": 38,
+    "?SpannungSens": 39,
     "SpannungNetzteil": 130
   },
   "Aussentemperatur":{
