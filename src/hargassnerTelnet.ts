@@ -137,16 +137,27 @@ function parseModel(model: dynamicModel, data: string[]) {
     const spec = model[key]
 
     // Ignore (used for documentation)
-    if (typeof spec === 'string') {
+    if (key.startsWith('_')) {
       continue
     }
 
-    // If spec is a number use that entry from the data array,
-    // otherwise if the spec is a array, then digitally decode it.
-    if (typeof spec === 'number') {
+    if (typeof spec === 'string') {
+      // if spec is a string, include value from model
+      value = spec
+    } else if (typeof spec === 'number') {
+      // If spec is a number or string use that entry from the data array,
       value = data[spec]
     } else if (Array.isArray(spec)) {
-      value = (parseInt(data[spec[0]], 16) & Number(spec[1])) > 0
+      if (isObject(spec[0])) {
+        // if array entry is a object further parse it
+        value = [] as Array<dynamicData>
+        for (const key in spec) {
+          value[key] = parseModel(spec[key], data)
+        }
+      } else {
+        // otherwise if the spec is a array, then digitally decode it.
+        value = (parseInt(data[spec[0]], 16) & Number(spec[1])) > 0
+      }
     } // else: "Unexpected configuration!"
     target[key] = value
   }

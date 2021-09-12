@@ -1,0 +1,104 @@
+# Classic Lambda
+## Parameters
+
+Das '?' vor dem Namen des Parameters bedeutet, dass die Werte/Funktion dieses Parameters unbekannt sind.
+
+- Allgemein
+  - ?Kesselzustand
+
+- Kessel
+  - Sauerstoffgehalt
+    - Ist ...Aktueller Sauerstoffgehalt im Kessel
+    - Soll ...Erwarteter Sauerstoffgehalt im Kessel
+  - Temp 
+    - Ist ...Aktuelle Temeratur im Kessel
+    - Soll ...Erwartete Temperatur im Kessel
+    - Rauchgas ...Temeratur vom Rauchgas
+    - Ruecklauf
+      - Ist ...Aktuelle Rücklauftemperatur
+      - Soll ...Erwartete Rücklauftemperatur
+  - Leistung ...Aktuelle Kesselleistung
+  - ?BrennstoffScale
+  - ?HoechsteAnforderung 
+- Puffer
+  - Temp
+    - Oben ...Wassertemperatur Oben
+    - MitteOben ...Wassertemperatur MitteOben
+    - Mitte ...Wassertemperatur Mitte
+    - MitteUnten ...Wassertemperatur MitteUnten
+    - Unten ...Wassertemperatur Unten
+    - Soll
+      - Oben ...Erwartete Wassertemperatur Oben
+      - Unten ...Erwartete Wassertemperatur Unten
+  - ?Zustand
+  - ?Soll
+  - Fuellgrad
+- Boiler
+  - id ...Name des Boilers
+  - Temp 
+    - Ist ...Aktuelle Temperatur
+    - Soll ...Erwartete Temperatur
+  - Pumpe ...Status der Pumpe
+  - Zirkulationspumpe ...Status der Zirkulationspumpe
+- Vorlaeufe
+  - id ...Name des Vorlaufs
+  - Temp
+    - Ist ...Aktuelle Temperatur
+    - Soll ...Erwartete Temperatur
+    - Raum
+      - Ist ...Aktuelle Raumtemperatur
+      - Soll ...Erwartete Raumtemperatur
+  - Zustand
+  - ?FRZustand
+  - Pumpe ...Status der Pumpe
+  - Mischer
+    - Auf
+    - Zu
+- Heizkreise
+  - Array
+    - id ...Name des Heizkreises
+    - Temp
+      - Ist ...Aktuelle Temperatur
+      - Soll ...Erwartete Temperatur
+      - Raum
+        - Ist ...Aktuelle Raumtemperatur
+        - Soll ...Erwartete Raumtemperatur
+    - Zustand
+    - ?FRZustand
+    - Anforderung
+    - Pumpe
+    - Mischer
+      - Auf
+      - Zu
+  - ?exts
+    - id
+    - Soll
+    - Pumpe
+    - Anforderung
+- Lager
+  - Lagerstand ...Aktueller Lagerstand
+  - Verbrauchszaehler ...Insgesamt verbrauchter Lagerstand
+- Ascheschnecke
+  - Run ...Status der Ascheschnecke
+  - Richtung ...Richtung der Ascheschnecke
+- Einschub
+  - Ist
+  - Soll
+  - Strom
+  - Run
+  - Richtung
+- Strom
+  - Raumaustragung
+  - Ascheaustragung
+  - Schieberost
+  - Putzeinheit
+  - Leistung
+  - Spannung
+  - Staerke
+  - ?SpannungSens
+  - SpannungNetzteil
+- Aussentemperatur
+  - Ist ...Aktuelle Außentemperatur
+  - Gemittelt ...Durchschnitt über längeren Zeitraum
+- ? ...Funktion unbekannt, nicht einordar
+- _dummy ...Parameter welche nicht genutzt werden
