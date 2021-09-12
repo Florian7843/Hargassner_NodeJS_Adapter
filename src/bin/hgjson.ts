@@ -86,13 +86,13 @@ client.on('data', (data) => {
       array = Object.assign({}, array)
     }
 
-    string = argv.formatted ? array : JSON.stringify(array)
+    string = JSON.stringify(array, null, argv.formatted ? 2 : 0)
   } else {
     // --array option is not specified
 
-    // TODO: output data formatted via JSON.strigify(data, null, 2) as output shows [object]
-    // if formatted or raw is set output data as is, otherwise stringify
-    string = argv.formatted || argv.raw ? data : JSON.stringify(data)
+    // if --raw, then output as is, otherwise stringify. if --formatted then intent otherwise don't
+    if (argv.raw) string = data
+    else string = JSON.stringify(data, null, argv.formatted ? 2 : 0)
   }
 
   console.log(string)
