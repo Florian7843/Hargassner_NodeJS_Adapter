@@ -1,6 +1,5 @@
 import net from 'net'
 import fs from 'fs'
-import { type } from 'os'
 
 export type HargassnerOptions = {
   quiet?: boolean
