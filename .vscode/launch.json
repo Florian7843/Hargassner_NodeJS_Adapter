@@ -15,7 +15,8 @@
       "program": "${workspaceFolder}/dist/bin/hgjson.js",
       "args": [
         "--ip", "${input:ip}",
-        "--raw", "${input:raw}"
+        "--raw", "${input:raw}",
+        "--model", "${input:model}"
       ],
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": [
@@ -36,6 +37,13 @@
       "default": "false",
       "description": "Show raw output",
       "options": ["true", "false"]
+    },
+    {
+      "id": "model",
+      "type": "pickString",
+      "default": "classicLambda",
+      "description": "Show raw output",
+      "options": ["default", "nano2", "classicLambda"]
     }
   ]
 }
