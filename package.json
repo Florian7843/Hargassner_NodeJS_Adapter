@@ -17,7 +17,7 @@
   },
   "types": "dist/index.d.ts",
   "bin": {
-    "hgjson": "./dist/hgjson.js"
+    "hgjson": "./dist/bin/hgjson.js"
   },
   "repository": {
     "type": "git",
